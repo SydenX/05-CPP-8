@@ -6,7 +6,7 @@
 #    By: jtollena <jtollena@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 23:04:50 by lolemmen          #+#    #+#              #
-#    Updated: 2024/09/25 12:38:25 by jtollena         ###   ########.fr        #
+#    Updated: 2024/09/25 13:00:41 by jtollena         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,10 @@ NAME := easyfind
 
 RM = rm -rf
 CXX = c++
-CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -Wno-shadow
+CXXFLAGS = -std=c++98 #-Wall -Werror -Wextra -Wno-shadow
 
 SOURCES := \
+	 span.cpp \
 	 main.cpp
 	 
 # **************************************************************************** #
