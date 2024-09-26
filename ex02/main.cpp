@@ -71,8 +71,14 @@ int main(){
 	vstack.push_back(5);
 	vstack.push_back(737);
 	vstack.push_back(0);
-	for(unsigned int i = 0; i < vstack.size(); i++){
-		std::cout << vstack[i] << " ";
+	std::vector<int>::iterator vit = vstack.begin();
+	std::vector<int>::iterator vite = vstack.end();
+	++vit;
+	--vit;
+	while (vit != vite)
+	{
+		std::cout << *vit << " ";
+		++vit;
 	}
 	std::cout << std::endl;
 
