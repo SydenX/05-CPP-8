@@ -6,13 +6,11 @@
 
 template < typename T >
 void easyfind(T const &container, int const &i){
-	for(typename T::const_iterator it = container.begin(); it != container.end(); ++it) {
-		if (*it == i){
-			std::cout << i << " found!" << std::endl;
-			return ;
-		}
+	if(std::find(container.begin(), container.end(), i) != container.end()){
+		std::cout << i << " found!" << std::endl;
+	} else {
+		std::cout << i << " not found!" << std::endl;	
 	}
-	std::cout << i << " not found!" << std::endl;
 }
 
 

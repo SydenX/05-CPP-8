@@ -3,10 +3,12 @@
 #include <vector>
 #include <list>
 #include <array>
+#include <deque>
 #include "easyfind.hpp"
 
 int main(int, char**)
 {
+    std::cout << std::endl;
 	std::vector<int> vect;
 
     vect.push_back(10);
@@ -16,6 +18,7 @@ int main(int, char**)
 	easyfind(vect, 20);
     easyfind(vect, 40);
 
+    std::cout << std::endl;
 	std::list<int> list;
 
     list.push_back(10);
@@ -25,6 +28,7 @@ int main(int, char**)
 	easyfind(list, 10);
     easyfind(list, 60);
 
+    std::cout << std::endl;
     std::array<int, 3> array;
 
     array[0] = (-5);
@@ -33,4 +37,14 @@ int main(int, char**)
 
 	easyfind(array, -5);
     easyfind(array, 234635);
+
+    std::cout << std::endl;
+    std::deque<int> deque;
+
+    deque.push_back(-1);
+    deque.push_back(0);
+    deque.push_back(1);
+
+	easyfind(deque, 0);
+    easyfind(deque, 2);
 }

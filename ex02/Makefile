@@ -6,14 +6,14 @@
 #    By: jtollena <jtollena@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 23:04:50 by lolemmen          #+#    #+#              #
-#    Updated: 2024/09/26 10:45:03 by jtollena         ###   ########.fr        #
+#    Updated: 2024/09/26 10:45:06 by jtollena         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .SILENT:
 .PHONY: NAME re all fclean clean
 
-NAME := span
+NAME := mutant
 
 # Compilation
 
@@ -22,7 +22,6 @@ CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -Wno-shadow
 
 SOURCES := \
-	 span.cpp \
 	 main.cpp
 	 
 # **************************************************************************** #
