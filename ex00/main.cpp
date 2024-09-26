@@ -2,7 +2,6 @@
 #include <cstdlib>
 #include <vector>
 #include <list>
-#include <array>
 #include <deque>
 #include "easyfind.hpp"
 
@@ -27,16 +26,6 @@ int main(int, char**)
 
 	easyfind(list, 10);
     easyfind(list, 60);
-
-    std::cout << std::endl;
-    std::array<int, 3> array;
-
-    array[0] = (-5);
-    array[1] = (0);
-    array[2] = (30000);
-
-	easyfind(array, -5);
-    easyfind(array, 234635);
 
     std::cout << std::endl;
     std::deque<int> deque;
