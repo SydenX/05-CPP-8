@@ -20,7 +20,6 @@ void Span::addNumber(int n){
 	if (this->_list.size() == this->_n)
 		throw (Span::ListAlreadyFull());
 	this->_list.push_back(n);
-	sort(this->_list.begin(), this->_list.end()); 
 }
 
 void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end){
@@ -33,9 +32,11 @@ unsigned int Span::shortestSpan() const {
 	if (this->_list.size() <= 1)
 		throw (Span::DistanceNotFound());
 	int diff = INT_MAX;
-	for(unsigned int i = 1; i < this->_list.size(); i++){
-		if (abs(this->_list[i] - this->_list[i - 1]) < diff)
-			diff = abs(this->_list[i] - this->_list[i - 1]);
+	std::vector<int> tmp = this->_list;
+	sort(tmp.begin(), tmp.end());
+	for(unsigned int i = 1; i < tmp.size(); i++){
+		if (abs(tmp[i] - tmp[i - 1]) < diff)
+			diff = abs(tmp[i] - tmp[i - 1]);
 	}
 	return diff;
 }
@@ -43,14 +44,8 @@ unsigned int Span::shortestSpan() const {
 unsigned int Span::longestSpan() const {
 	if (this->_list.size() <= 1)
 		throw (Span::DistanceNotFound());
-	int min = INT_MAX;
-	int max = INT_MIN;
-	for(unsigned int i = 0; i < this->_list.size(); i++){
-		if (this->_list[i] < min)
-			min = this->_list[i];
-		if (this->_list[i] > max)
-			max = this->_list[i];
-	}
+	int min = *min_element(this->_list.begin(), this->_list.end());
+	int max = *max_element(this->_list.begin(), this->_list.end());
 	return abs(max - min);
 }
 

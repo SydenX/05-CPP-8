@@ -123,11 +123,11 @@ void	test_valid_range() {
 	std::cout << "=== Test valid range ===" << std::endl;
 	try {
 		std::vector<int> vec;
-		vec.reserve(5);
-		for (int i = 0; i < 5; i++) {
+		vec.reserve(15000);
+		for (int i = 0; i < 15000; i++) {
 			vec.push_back(i);
 		}
-		Span sp = Span(5);
+		Span sp = Span(15000);
 		sp.addRange(vec.begin(), vec.end());
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
